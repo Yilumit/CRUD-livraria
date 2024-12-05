@@ -147,10 +147,10 @@ public class LivroFisicoBoundary implements ITela {
             }
         };
 
-        TableColumn<LivroFisico, Void> col6 = new TableColumn<>("Acoes");
+        TableColumn<LivroFisico, Void> col6 = new TableColumn<>("Ações");
         col6.setCellFactory(cb);
         
-        tableView.getColumns().clear();
+        tableView.getColumns().clear();     //limpa as colunas para evitar que se multipliquem a cada interacao com o menu
         tableView.getColumns().addAll(col1, col2, col3, col4, col5, col6);
         tableView.setItems(control.getLivrosFisicos());
     }
@@ -167,9 +167,7 @@ public class LivroFisicoBoundary implements ITela {
         Bindings.bindBidirectional(control.getAutor(), txtAutor.textProperty());
         Bindings.bindBidirectional(control.getDataLancamento(), txtDataLancamento.valueProperty());
         Bindings.bindBidirectional( txtEditora.textProperty(), control.getEditora());
-        // control.getQuantidadeDisponivel().addListener((obs, antigo, novo) -> {
-        //     txtQntDisponivel.setText(String.valueOf(novo));
-        // });
+        
     }
 
 }

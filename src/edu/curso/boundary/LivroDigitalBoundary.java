@@ -144,7 +144,7 @@ public class LivroDigitalBoundary implements ITela{
             }
         };
 
-        TableColumn<LivroDigital, Void> col6 = new TableColumn<>("Ação");
+        TableColumn<LivroDigital, Void> col6 = new TableColumn<>("Ações");
         col6.setCellFactory(cb);
 
         tableView.getColumns().clear();
